@@ -1,0 +1,349 @@
+body {
+  background-color: rgb(19, 19, 59);
+  color : rgb(148, 163, 184);
+  font-family: Delius, Caveat, Georgia, 'Times New Roman', Times, serif;
+  font-size: 100%;
+  padding-bottom: 100px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+/* face ca derularea paginii să se facă lin, cu o animație plăcută, în loc să sară instant la o anumită secțiune.*/
+
+/* .site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: rgb(25, 25, 85);
+  border-bottom: 4px solid black;
+  position: sticky;
+} */
+
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+  color: rgba(190, 219, 59, 0.6);
+}
+
+
+.delius-regular {
+  font-family: "Delius", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+h1 , h2, .description {
+  align-items: center;
+  max-width: 100%;
+  color: white;
+}
+
+.about {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  .description, .right-column {
+    font-size: 16px;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .description:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+  }
+
+  .container {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+/* Telefoane */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .description {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+
+.icons {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  z-index: 1000;
+}
+
+.icons a {
+  margin-right: 10px;/* */
+}
+
+.icons img {
+  margin: 0 10px; /* sus jos 0 iar stanga dreapta 10 */
+  transition: transform 0.3s ease;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+.icons img:hover {
+  transform: scale(1.1);
+}
+
+.container {
+  display: flex;
+  flex-direction: row; /* să așeze elementele copile orizontal, pe un rând — de la stânga la dreapta (implicit)  */
+  justify-content: space-between; /* primul elem lipit de marginia stanga, continutul este impartit egal inre ele dar ultimul elem e lipit de margine dreapta */
+  align-items: flex-start;/* începe la începutul axei transversale (sus, dacă axa transversală e verticală). */ 
+  gap: 40px;
+  margin: 20px;
+}
+
+
+.beginning {
+  flex: 0 0 50%; /*  flex-grow, shrink si basis , seteaza un element să ocupe fix 50% fără să se întindă sau să se strângă, indiferent de spațiul containerului. */
+  max-width: 50%;
+}
+
+.right-column {
+  flex: 0 0 50%;
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 600px;
+  height: 600px;
+  pointer-events: none; /*Nu răspunde la hover, click, drag, sau alte interacțiuni cu mouse-ul/touch-ul. */
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(100, 255, 218, 0.2) 0%, rgba(100, 255, 218, 0) 80%);
+  transform: translate(-50%, -50%);
+  z-index: 9999; /* elementul e f in fata*/
+  transition: transform 0.3s ease-out;
+} 
+
+.list {
+  color: rgb(204, 204, 204);
+  cursor: pointer;
+  font-family: Delius, Caveat, Georgia, "Times New Roman", Times, serif;
+  font-size: 16px;
+  height: auto;
+  text-align: left;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+  width: auto;
+  padding-left: 20px; 
+  margin-top: 20px; 
+  display: block; 
+}
+
+
+.custom-list {
+  list-style: none; 
+  padding-left: 0;
+}
+
+.custom-list li {
+  background-image: url('claude.svg'); 
+  background-repeat: no-repeat;
+  background-position: 0 5px; 
+  background-size: 18px 18px; 
+  padding-left: 30px; 
+  margin-bottom: 10px;
+}
+
+
+a:hover {
+  color: #64ffda; 
+}
+
+
+a:visited {
+  color: #cccccc; 
+}
+
+
+.gif-fixat {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 60px; 
+  height: auto;
+  z-index: 1000; 
+  transition: transform 0.3s ease; 
+}
+
+.gif-fixat:hover {
+  transform: scale(3);
+  cursor: pointer; 
+}
+
+
+
+.extra-section {
+  width: 100%;
+  margin-top: 40px;
+  padding: 20px;
+  text-align: left;
+}
+
+.list li {
+  margin-bottom: 8px;
+  transition: color 0.3s ease-in-out;
+}
+
+.list li:hover {
+  color: #64ffda; 
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
+.firstproject {
+  display: flex;
+  align-items:flex-start;
+  justify-content: flex-start; 
+  border: 2px solid rgba(128, 128, 128,0.3);
+  border-radius: 12px;
+  padding: 20px;
+  margin-right: auto;
+  max-width: 100%;
+  background-color: rgba(255, 255, 255, 0.03);
+  gap: 20px;
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.firstproject :hover {
+  transform: scale(1.05); 
+  cursor: pointer; 
+}
+
+.nature {
+  border-radius: 8px;
+  object-fit: cover;
+  max-width: 200px;
+  height: auto;
+  width: auto;
+  max-height: 180px;
+}
+
+.project-text {
+  flex: 1;
+}
+
+.project-text h4 {
+  margin-top: 0;
+  font-size: 1.3rem;
+  color: white;
+}
+
+.firstproject:hover h4 {
+  color: #4e7813; 
+  transition: color 0.3s ease;
+}
+
+
+
+
+.butonAntonia {
+  background: linear-gradient(135deg, #ff6ec4, #7873f5);
+  color: white;
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer; 
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.butonAntonia:hover {
+  background: linear-gradient(135deg, #7873f5, #ff6ec4);
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-3px);
+  opacity: 0.78;
+}
+
+.butonAntonia:active {
+  transform: translateY(1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+} 
+
+footer {
+  position: static;
+  height: 80px;
+  padding: 15px 20px;
+  text-align: center;
+  color: rgb(148, 163, 184);
+  border-top: 2px solid rgba(128, 128, 128, 0.3);
+  z-index: 1;
+  margin-top: 40px;
+  box-sizing: border-box;
+} 
+
+.sageata-sus {
+  font-size: 12px;
+}
+
+.java-button , .type-button , .react-button , .storybook-button{
+  background-color: rgba(94, 234, 212, 0.1);
+  color: rgb(94, 234, 212);
+  border: 1px solid #64ffda;
+  padding: 12px 24px;
+  font-size: 12px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+

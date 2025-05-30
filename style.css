@@ -1,15 +1,16 @@
+
 body {
   background-color: rgb(19, 19, 59);
   color : rgb(148, 163, 184);
   font-family: Delius, Caveat, Georgia, 'Times New Roman', Times, serif;
   font-size: 100%;
-  padding-bottom: 100px;
+  padding-bottom: 20px;
 }
 
-html {
-  scroll-behavior: smooth;
+* {
+  box-sizing: border-box;
 }
-/* face ca derularea paginii să se facă lin, cu o animație plăcută, în loc să sară instant la o anumită secțiune.*/
+
 
 /* .site-header {
   display: flex;
@@ -56,9 +57,6 @@ h1 , h2, .description {
   color: white;
 }
 
-.about {
-  max-width: 100%;
-}
 
 @media (max-width: 768px) {
   body {
@@ -134,12 +132,17 @@ h1 , h2, .description {
   align-items: flex-start;/* începe la începutul axei transversale (sus, dacă axa transversală e verticală). */ 
   gap: 40px;
   margin: 20px;
+  height: 100vh;
 }
 
 
 .beginning {
-  flex: 0 0 50%; /*  flex-grow, shrink si basis , seteaza un element să ocupe fix 50% fără să se întindă sau să se strângă, indiferent de spațiul containerului. */
+  flex: 0 0 50%; 
   max-width: 50%;
+  position: sticky;
+  top: 20px; 
+  height: fit-content; 
+  padding-right: 20px;
 }
 
 .right-column {
@@ -148,6 +151,9 @@ h1 , h2, .description {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  height: 100vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
 }
 
 .custom-cursor {
@@ -164,26 +170,24 @@ h1 , h2, .description {
   transition: transform 0.3s ease-out;
 } 
 
-.list {
-  color: rgb(204, 204, 204);
-  cursor: pointer;
-  font-family: Delius, Caveat, Georgia, "Times New Roman", Times, serif;
-  font-size: 16px;
-  height: auto;
-  text-align: left;
-  text-decoration: none;
-  transition: color 0.3s ease-in-out;
-  width: auto;
-  padding-left: 20px; 
-  margin-top: 20px; 
-  display: block; 
-}
 
 
 .custom-list {
   list-style: none; 
   padding-left: 0;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
+
+.custom-list a.active {
+  font-size: 18px;
+  color: #64ffda;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
 
 .custom-list li {
   background-image: url('claude.svg'); 
@@ -216,7 +220,7 @@ a:visited {
 }
 
 .gif-fixat:hover {
-  transform: scale(3);
+  transform: scale(1);
   cursor: pointer; 
 }
 
@@ -229,23 +233,14 @@ a:visited {
   text-align: left;
 }
 
-.list li {
-  margin-bottom: 8px;
-  transition: color 0.3s ease-in-out;
-}
-
-.list li:hover {
-  color: #64ffda; 
-}
 
 a:link,
 a:visited,
-a:hover,
 a:active {
   text-decoration: none;
 }
 
-.firstproject {
+.first-project , .second-project{
   display: flex;
   align-items:flex-start;
   justify-content: flex-start; 
@@ -260,12 +255,12 @@ a:active {
   transition: transform 0.3s ease;
 }
 
-.firstproject :hover {
+.first-project :hover {
   transform: scale(1.05); 
   cursor: pointer; 
 }
 
-.nature {
+.nature , .forest{
   border-radius: 8px;
   object-fit: cover;
   max-width: 200px;
@@ -284,7 +279,7 @@ a:active {
   color: white;
 }
 
-.firstproject:hover h4 {
+.first-project:hover h4 {
   color: #4e7813; 
   transition: color 0.3s ease;
 }
@@ -326,7 +321,6 @@ footer {
   padding: 15px 20px;
   text-align: center;
   color: rgb(148, 163, 184);
-  border-top: 2px solid rgba(128, 128, 128, 0.3);
   z-index: 1;
   margin-top: 40px;
   box-sizing: border-box;
@@ -334,6 +328,13 @@ footer {
 
 .sageata-sus {
   font-size: 12px;
+  position: relative;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+h4:hover .sageata-sus {
+  transform: translate(4px, -4px);
 }
 
 .java-button , .type-button , .react-button , .storybook-button{
